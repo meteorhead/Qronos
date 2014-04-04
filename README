@@ -1,0 +1,18 @@
+                                   Qronos: A project time tracking application
+
+  Qronos helps tracking projects using MVC design pattern and Qt 4.8.4 framework.
+  Data storage is provided using SQLite.
+  
+
+Requirements & Notes:
+- SQLite 3.3+
+
+Credits:
+
+- Code for sqlite database connection retrieved from Nokia Dev
+
+
+- Further Improvements:
+  sync with existing projects
+ 
+   
