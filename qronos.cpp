@@ -135,7 +135,7 @@ void Qronos::beginTimeTracking()
       QString project ;
         while (fetchActiveP.next())
                     project= fetchActiveP.value(0).toString();
-       int row = ui->treeView->currentIndex().row();
+       //int row = ui->treeView->currentIndex().row();
        projectList << project;
       activeProjects->setStringList(projectList);
        ui->listView->setModel(activeProjects);
@@ -143,11 +143,9 @@ void Qronos::beginTimeTracking()
         timerMap->insert(idProject,new QTime);
         t = timerMap->value(idProject);
         t->restart();
-
- }
+       }
 
 }
-
 
 void Qronos::EndTimeTracking()
 {
@@ -170,6 +168,7 @@ void Qronos::EndTimeTracking()
         QTime latestTime;
 
         latestTime = QTime::fromString(Time,"hh:mm:ss");
+         t = timerMap->value(idProject);
         QTime totalTime = latestTime.addMSecs(t->restart());
 
         QSqlQuery updateGui(QString("UPDATE Projects SET Time_Elapsed = ")
@@ -201,9 +200,11 @@ void Qronos::layoutInit()
     ui->boutonStart->setText("Start");
     ui->boutonStop->setText("Stop");
     ui->boutonExport->setText("Export");
-    ui->add->setIcon(QIcon(":/add-icon.png"));
-    ui->remove->setIcon(QIcon(":/remove-icon.png"));
-
+    ui->add->setIcon(QIcon(":/images/icons/add-icon.png"));
+    ui->remove->setIcon(QIcon(":/images/icons/remove-icon.png"));
+    ui->boutonStart->setIcon(QIcon(":/images/icons/play.png"));
+    ui->boutonStop->setIcon(QIcon(":/images/icons/pause.png"));
+    ui->boutonExport->setIcon(QIcon(":/images/icons/export.png"));
     timerMap = new QMap<int, QTime *>();
     mProjects = new QSqlTableModel(this);
     mProjects->setTable("Projects");
@@ -229,6 +230,10 @@ QTime Qronos::convertSecondsToTimeString(qint64 mSec)
     int MM = (sec  % 3600) / 60;
     int ss = (sec  % 216000);
     return  QTime(H,MM,ss);
+}
+void Qronos::updateGuiActiveProjects()
+{
+
 }
 
 Qronos::~Qronos()

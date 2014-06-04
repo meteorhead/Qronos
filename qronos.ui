@@ -14,7 +14,9 @@
    <string>Qronos</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QPushButton#boutonStart{
+   <string notr="true">QWidget#Qronos{background-color: rgba(214, 214, 214, 214);}
+
+QPushButton#boutonStart{
 color: white;
 border: 2px solid #555;
 border-radius: 11px;
@@ -88,6 +90,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
      </item>
      <item>
       <widget class="QFrame" name="frame_2">
+       <property name="styleSheet">
+        <string notr="true">QFrame#frame_2{background-color: rgb(191, 191, 191);}</string>
+       </property>
        <property name="frameShape">
         <enum>QFrame::StyledPanel</enum>
        </property>
@@ -197,6 +202,10 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
           <widget class="QFrame" name="frame">
+           <property name="styleSheet">
+            <string notr="true">
+QFrame#frame{background-color: rgb(191, 191, 191);}</string>
+           </property>
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
            </property>

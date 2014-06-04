@@ -15,13 +15,11 @@ TEMPLATE = app
 SOURCES += main.cpp\
         qronos.cpp \
     database.cpp \
-    addprojectdialog.cpp \
-    trackingmodel.cpp
+    addprojectdialog.cpp
 
 HEADERS  += qronos.h \
     database.h \
-    addprojectdialog.h \
-    trackingmodel.h
+    addprojectdialog.h
 
 FORMS    += qronos.ui \
     addprojectdialog.ui

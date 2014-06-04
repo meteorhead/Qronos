@@ -22,6 +22,7 @@ signals:
 
 public slots:
 
+
 private:
     QSqlDatabase db;
 

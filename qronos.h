@@ -34,6 +34,7 @@ public slots:
     void removeSelectedEntry();
     void beginTimeTracking();
     void EndTimeTracking();
+    void updateGuiActiveProjects();
 private:
     Ui::Qronos *ui;
     Database db;
